@@ -14,7 +14,10 @@ class MeuApp extends StatelessWidget {
 }
 
 class PaginaInicial extends StatelessWidget {
-  final TextEditingController _nomeController = TextEditingController();
+  final TextEditingController _nomeCartaoController = TextEditingController();
+  final TextEditingController _numeroCartaoController = TextEditingController();
+  final TextEditingController _dataValidadeController = TextEditingController();
+  final TextEditingController _cvvController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
   @override
@@ -38,22 +41,22 @@ class PaginaInicial extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextFormField(
-              controller: _nomeController,
+              controller: _nomeCartaoController,
               decoration: InputDecoration(labelText: 'Nome do Cartão'),
             ),
             SizedBox(height: 16),
             TextFormField(
-              controller: _nomeController,
+              controller: _numeroCartaoController,
               decoration: InputDecoration(labelText: 'Número do Cartão'),
             ),
             SizedBox(height: 16),
             TextFormField(
-              controller: _nomeController,
+              controller: _dataValidadeController,
               decoration: InputDecoration(labelText: 'Data Validade'),
             ),
             SizedBox(height: 16),
             TextFormField(
-              controller: _nomeController,
+              controller: _cvvController,
               decoration: InputDecoration(labelText: 'CVV'),
             ),
             SizedBox(height: 16),
@@ -65,9 +68,17 @@ class PaginaInicial extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Lógica para processar o formulário
-                String nome = _nomeController.text;
+                String nomeCartao = _nomeCartaoController.text;
+                String numeroCartao = _numeroCartaoController.text;
+                String dataValidade = _dataValidadeController.text;
+                String cvv = _cvvController.text;
                 String email = _emailController.text;
-                print('Nome: $nome, E-mail: $email');
+                
+                print('Nome do Cartão: $nomeCartao');
+                print('Número do Cartão: $numeroCartao');
+                print('Data Validade: $dataValidade');
+                print('CVV: $cvv');
+                print('E-mail: $email');
               },
               child: Text('Enviar'),
             ),
