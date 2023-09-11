@@ -73,7 +73,6 @@ class PaginaInicial extends StatelessWidget {
                 String dataValidade = _dataValidadeController.text;
                 String cvv = _cvvController.text;
                 String email = _emailController.text;
-                
                 print('Nome do Cartão: $nomeCartao');
                 print('Número do Cartão: $numeroCartao');
                 print('Data Validade: $dataValidade');
